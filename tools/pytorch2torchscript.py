@@ -150,6 +150,13 @@ def parse_args():
 
 
 if __name__ == '__main__':
+    import sys
+    sys.argv = [sys.argv[0]]
+    sys.argv += ['/home/hsiehpinghan/git/mmsegmentation/configs/pspnet/pspnet_r50b-d8_512x1024_80k_cityscapes.py']
+    sys.argv += ['--checkpoint', '/home/hsiehpinghan/git/mmsegmentation/checkpoint/pspnet_r50b-d8_512x1024_80k_cityscapes_20201225_094315-6344287a.pth']
+    sys.argv += ['--output-file', '/tmp/pspnet_r50b-d8_512x1024_80k_cityscapes.pt']
+    sys.argv += ['--shape', '512', '1024']
+
     args = parse_args()
     check_torch_version()
 
